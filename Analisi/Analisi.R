@@ -12,9 +12,6 @@ dati <- rbind(dati1, dati2)
 
 dati <- dati[!is.na(dati$Condition), ]
 
-write_excel_csv(dati, "Scraping/datasets/dati.csv", na = "NA")
-
-dati <- read_csv("Scraping/datasets/dati.csv")
 
 
 brand <- readr::read_csv("Scraping/google_trends_brand_country.csv")
