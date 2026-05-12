@@ -644,8 +644,6 @@ def main():
         print(f"\n[2/2] Scraping di {len(item_links)} articoli...")
         dataset, errors = [], []
 
-        checkpoint_file = f"vinted_{query.replace(' ', '_')}_checkpoint.csv"
-
         for i, (link, is_boosted) in enumerate(item_links, 1):
             print(f"  [{i:3d}/{len(item_links)}] {link}  (boost={is_boosted})")
             try:
@@ -656,7 +654,9 @@ def main():
                 errors.append({"URL": link, "Error": str(e)})
 
             # ── SALVATAGGIO INTERMEDIO ogni 100 prodotti ──────────
-            if len(dataset) % 100 == 0 and len(dataset) > 0:
+            if len(dataset) % 50 == 0 and len(dataset) > 0:
+                timestamp = datetime.now().strftime("%Y%m%d_%H-%M")
+                checkpoint_file = f"vinted_{query.replace(' ', '_')}_checkpoint_{timestamp}.csv"
                 df_checkpoint = pd.DataFrame(dataset)
                 df_checkpoint.to_csv(checkpoint_file, index=False, encoding="utf-8-sig")
                 print(f"  [CHECKPOINT] {len(dataset)} prodotti salvati → {checkpoint_file}")
