@@ -1,14 +1,20 @@
-rm(list=ls());gc();
-setwd("C:/Users/Utente/OneDrive/Universita/Magistrale/2025-2026/Aziendali/Progetto")
+rm(list=ls()); gc()
 
-dir("Scraping/datasets")
-dati1 <- readr::read_csv("Scraping/datasets/vinted_sneakers_20260511_18-15.csv")
-dati2 <- readr::read_csv("Scraping/datasets/vinted_sneakers_20260512_15-02.csv")
+library(readr)
+
+path1 <- "Scraping/datasets/vinted_sneakers_20260511_18-15.csv"
+path2 <- "Scraping/datasets/vinted_sneakers_20260512_15-02.csv"
+
+dati1 <- read_csv(path1, locale = locale(encoding = "UTF-8"), show_col_types = FALSE)
+dati2 <- read_csv(path2, locale = locale(encoding = "UTF-8"), show_col_types = FALSE)
+
 dati <- rbind(dati1, dati2)
 
-readr::write_csv(dati, "Scraping/datasets/dati.csv")
+dati <- dati[!is.na(dati$Condition), ]
 
+write_excel_csv(dati, "Scraping/datasets/dati.csv", na = "NA")
 
+dati <- read_csv("Scraping/datasets/dati.csv")
 
 
 brand <- readr::read_csv("Scraping/google_trends_brand_country.csv")
