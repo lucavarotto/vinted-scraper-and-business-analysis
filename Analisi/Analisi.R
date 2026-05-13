@@ -2,17 +2,20 @@ rm(list=ls()); gc()
 
 library(readr)
 
-path1 <- "Scraping/datasets/vinted_sneakers_20260511_18-15.csv"
-path2 <- "Scraping/datasets/vinted_sneakers_20260512_15-02.csv"
+dati <- read_csv("Scraping/datasets/dati.csv")
 
-dati1 <- read_csv(path1, locale = locale(encoding = "UTF-8"), show_col_types = FALSE)
-dati2 <- read_csv(path2, locale = locale(encoding = "UTF-8"), show_col_types = FALSE)
+View(dati)
 
-dati <- rbind(dati1, dati2)
-
+cat("dimensioni:", dim(dati))
+dati[is.na(dati$Condition), ]
 dati <- dati[!is.na(dati$Condition), ]
+cat("\ndimensioni:", dim(dati))
+cat("\nrighe uniche:", length(unique(dati$URL)), length(unique(dati$Item_ID)))
 
+dati <- dati[!duplicated(dati$Item_ID),]
+dim(dati)
 
+sum((table(dati$Seller_User) |> sort())>1)
 
 brand <- readr::read_csv("Scraping/google_trends_brand_country.csv")
 View(brand)
