@@ -1,3 +1,4 @@
+setwd("C:/Users/Utente/OneDrive/Universita/Magistrale/2025-2026/Aziendali/Progetto")
 rm(list=ls()); gc()
 
 library(readr)
@@ -16,6 +17,10 @@ dati <- dati[!duplicated(dati$Item_ID),]
 dim(dati)
 
 sum((table(dati$Seller_User) |> sort())>1)
+
+id <- grep(pattern="min", dati$Upload_Date_Raw)
+dati$Upload_Date_Raw[id] <- "0 ore"
+table(dati$Upload_Date_Raw)
 
 brand <- readr::read_csv("Scraping/google_trends_brand_country.csv")
 View(brand)

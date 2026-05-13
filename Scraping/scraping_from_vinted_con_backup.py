@@ -621,12 +621,12 @@ def main():
     print("\nQuanti elementi vuoi raccogliere?")
     print("  1 → 10  (test rapido)")
     print("  2 → 200")
-    print("  3 → 1000")
+    print("  3 → 500")
     print("  4 → 3000")
     print("  5 → Tutti quelli disponibili (lento)")
     scelta = input("Scelta (inserisci un numero tra 1 e 5): ").strip()
 
-    limit = {"1": 10, "2": 200, "3": 1000, "4": 3000, "5": 0}.get(scelta, 10)
+    limit = {"1": 10, "2": 200, "3": 500, "4": 3000, "5": 0}.get(scelta, 10)
 
     start = time.time()
     driver = init_driver()
@@ -659,7 +659,7 @@ def main():
                 checkpoint_file = f"vinted_{query.replace(' ', '_')}_checkpoint_{timestamp}.csv"
                 df_checkpoint = pd.DataFrame(dataset)
                 df_checkpoint.to_csv(checkpoint_file, index=False, encoding="utf-8-sig")
-                print(f"  [CHECKPOINT] {len(dataset)} prodotti salvati → {checkpoint_file}")
+                print(f"\n  [CHECKPOINT] {len(dataset)} prodotti salvati → {checkpoint_file}\n")
 
             if i % 10 == 0:
                 pause = random.uniform(8, 15)
