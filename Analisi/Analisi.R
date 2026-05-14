@@ -1,9 +1,7 @@
 setwd("C:/Users/Utente/OneDrive/Universita/Magistrale/2025-2026/Aziendali/Progetto")
 rm(list=ls()); gc()
 
-library(readr)
-
-dati <- read_csv("Scraping/datasets/dati.csv")
+dati <- readr::read_csv("Scraping/datasets/dati.csv")
 
 View(dati)
 

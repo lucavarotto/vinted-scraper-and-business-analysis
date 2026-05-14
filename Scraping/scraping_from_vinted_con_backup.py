@@ -347,18 +347,16 @@ def scrape_item_details(driver, url, is_boosted=False):
         "Shipping_Options_Count": None,
 
         # ── Badge di fiducia ───────────────────────────────────────────────
-        # FIX #1 — Is_Boosted: flag proveniente dalla griglia di ricerca (Fase 1).
+        # Is_Boosted: flag proveniente dalla griglia di ricerca (Fase 1).
         # Non è estraibile dalla pagina del singolo articolo.
         "Is_Boosted": is_boosted,
 
-        # FIX #2a — Has_Buyer_Protection:
-        # Indica se l'articolo mostra il blocco "Commissione per la Protezione acquisti".
-        # Selettore: data-testid="item-service-fee-title"
+        # Has_Buyer_Protection: Indica se l'articolo mostra il blocco
+        # "Commissione per la Protezione acquisti". Selettore: data-testid="item-service-fee-title"
         "Has_Buyer_Protection": None,
 
-        # FIX #2b — Has_Item_Verification:
-        # Indica se l'articolo mostra il blocco "Verifica dell'articolo" (servizio a pagamento).
-        # Selettore: data-testid="item-offline-verification-block-title"
+        # Has_Item_Verification: Indica se l'articolo mostra il blocco "Verifica dell'articolo"
+        # (servizio a pagamento). Selettore: data-testid="item-offline-verification-block-title"
         "Has_Item_Verification": None,
 
         # ── Venditore ──────────────────────────────────────────────────────
@@ -369,8 +367,7 @@ def scrape_item_details(driver, url, is_boosted=False):
         "Seller_Reviews_Count": None,
         "Seller_distintivi":    None,
 
-        # FIX NUOVA VARIABILE — Seller_Is_Pro:
-        # Vinted distingue venditori privati da professionisti con un badge apposito.
+        # Seller_Is_Pro: Vinted distingue venditori privati da professionisti con un badge apposito.
         # Utile per segmentare l'analisi di mercato (pro vs. privati).
         "Seller_Is_Pro": None,
 
