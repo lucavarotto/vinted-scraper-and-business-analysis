@@ -1,24 +1,28 @@
 import pandas as pd
-from os import listdir
+import os
 
-print(listdir("Progetto/Scraping/datasets"))
+# Definiamo il percorso della cartella
+path = "Progetto/Scraping/datasets/"
+print(os.listdir(path))
 
-# Caricamento dei dataset
-dati1 = pd.read_csv("Progetto/Scraping/datasets/vinted_sneakers_20260511_18-15.csv")
-dati2 = pd.read_csv("Progetto/Scraping/datasets/vinted_sneakers_20260512_15-02.csv")
-dati3 = pd.read_csv("Progetto/Scraping/datasets/vinted_sneakers_20260513_15-08.csv")
-dati4 = pd.read_csv("Progetto/Scraping/datasets/vinted_Puma_Blipstream_20260514_12-22.csv")
-dati5 = pd.read_csv("Progetto/Scraping/datasets/dati_pro_sellers.csv")
-dati6 = pd.read_csv("Progetto/Scraping/datasets/vinted_non-branded_sneakers_20260514_16-52.csv")
+# 1. Creiamo una lista con i nomi di tutti i file .csv nella directory
+files = os.listdir(path)
 
-# concatenazione
-# ignore_index=True serve a rifare la numerazione delle righe da 0 a N
-dati = pd.concat([dati1, dati2, dati3, dati4, dati5, dati6], ignore_index=True)
+# 2. Carichiamo ogni file in una lista di DataFrame usando una "list comprehension"
+lista_dataframe = [pd.read_csv(os.path.join(path, f)) for f in files]
+
+# 3. Concateniamo tutto in un unico DataFrame
+# ignore_index=True resetta l'indice per avere una numerazione continua
+dati_completi = pd.concat(lista_dataframe, ignore_index=True)
+
+# Verifica il risultato
+print(f"File uniti: {len(files)}")
+print(dati_completi.head())
 
 # Verifica le dimensioni
-print(dati.shape)
+print(dati_completi.shape)
 
 # Salvataggio in CSV (con codifica UTF-8 per sicurezza)
-dati.to_csv("Progetto/Scraping/datasets/dati.csv", index=False, encoding='utf-8-sig')
+dati_completi.to_csv("Progetto/Scraping/dati.csv", index=False, encoding='utf-8-sig')
 
 print("Finito")
