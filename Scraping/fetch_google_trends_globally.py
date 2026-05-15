@@ -46,7 +46,7 @@ def fetch_trends_global_batch(
                 return {kw: None for kw in keywords}
 
 def main(
-    input_csv: str = "Progetto/Scraping/vinted_sneakers_20260511_1525.csv",
+    input_csv: str = "Progetto/Scraping/dati.csv",
     output_csv: str = "google_trends_global.csv",
     delay_between_batches: float = 5.0,
 ):
