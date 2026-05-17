@@ -1,237 +1,201 @@
-brand,avg_interest_global_last_month
-isabel marant,5.774193548387097
-converse,79.90322580645162
-oxmox,0.0
-jeecey,0.0
-cruyff,2.7419354838709675
-ignoto,0.0
-nike,75.83870967741936
-reebok,14.03225806451613
-new balance,27.870967741935484
-adidas,59.70967741935484
-gucci,78.09677419354838
-the kooples,0.12903225806451613
-diadora,1.0
-michael kors,47.903225806451616
-na-kd,0.0
-munich,26.677419354838708
-philippe model,0.0
-vintage dressing,0.0
-new yorker,4.387096774193548
-fashion,68.58064516129032
-primark,25.967741935483872
-geox,3.6774193548387095
-graceland,1.8064516129032258
-calvin klein,78.48387096774194
-nautica,7.516129032258065
-dkny,72.70967741935483
-vintage boutique,12.516129032258064
-off-white,57.29032258064516
-united colors of benetton,6.32258064516129
-vty,3.2903225806451615
-puma,43.45161290322581
-speedware,0.0
-disney,84.12903225806451
-boss,53.61290322580645
-mas,74.74193548387096
-novita,0.0
-street,76.35483870967742
-up2fashion,0.0
-monkey,12.580645161290322
-nelly,1.3225806451612903
-american eagle,5.32258064516129
-zara,86.64516129032258
-idk,1.0
-shoe,47.193548387096776
-weiss,6.741935483870968
-tommy hilfiger,1.903225806451613
-ralph lauren,4.774193548387097
-us,71.06451612903226
-panther,1.4838709677419355
-worn,1.0
-inside,63.45161290322581
-wear,78.51612903225806
-maison margiela,3.064516129032258
-timberland,5.548387096774194
-premiata,0.4838709677419355
-blue motion,13.806451612903226
-clo,21.774193548387096
-fila,88.35483870967742
-japan style,12.161290322580646
-bally,20.193548387096776
-golden goose,1.5483870967741935
-superdry,1.0
-melania,1.967741935483871
-dolce & gabbana,0.9354838709677419
-prada,49.645161290322584
-autry,3.2903225806451615
-dior,81.2258064516129
-balenciaga,17.677419354838708
-asics,70.38709677419355
-champion,65.61290322580645
-lefties,11.193548387096774
-vans,85.74193548387096
-alexander mcqueen,6.419354838709677
-bepositive,0.0
-salomon,48.87096774193548
-superga,3.3225806451612905
-hogan,38.03225806451613
-on running,70.16129032258064
-lacoste,51.12903225806452
-max mara,7.354838709677419
-saucony,49.096774193548384
-drunknmunky,0.0
-crime london,4.129032258064516
-burberry,79.51612903225806
-mephisto,7.612903225806452
-just cavalli,13.516129032258064
-axel arigato,28.0
-tamaris,82.58064516129032
-twinset,15.516129032258064
-mix feel,6.419354838709677
-ugg,12.225806451612904
-karhu,1.0
-frozen,78.87096774193549
-etnies,0.03225806451612903
-skechers,34.45161290322581
-stradivarius,62.61290322580645
-christian louboutin,27.258064516129032
-bershka,83.09677419354838
-prima classe,4.645161290322581
-alesya,0.03225806451612903
-kenzo,4.870967741935484
-numeriś,0.0
-2star,0.0
-monsieur l,0.0
-decathlon,79.93548387096774
-amiri,1.0
-hoff,0.0967741935483871
-levi's,10.64516129032258
-mai,37.483870967741936
-energetics,0.0
-givenchy,4.709677419354839
-diesel,73.38709677419355
-signo by botinelli,0.0
-moaconcept,0.0
-blc,0.6129032258064516
-dr. martens,6.290322580645161
-toni pons,1.0
-bottega veneta,26.612903225806452
-blue box,56.516129032258064
-igi&co,0.0
-miu miu,11.935483870967742
-chicco,4.354838709677419
-h&m,74.41935483870968
-lelli kelly,0.0
-vanessa wu,0.0
-barefoot,3.3548387096774195
-aldo,3.806451612903226
-minecraft,76.45161290322581
-je m'appelle,0.06451612903225806
-moschino,1.0
-giardino d'oro,0.0
-rieker,13.161290322580646
-ghoud,0.06451612903225806
-bape sta,2.5806451612903225
-hugo boss,81.06451612903226
-hobibear,0.03225806451612903
-dc shoes,2.5161290322580645
-arena,84.06451612903226
-pull & bear,0.0
-gioseppo,0.0
-ellesse,0.0
-victoria,73.51612903225806
-guess,18.774193548387096
-numero,81.03225806451613
-joalice,0.0
-footkorner,0.0
-made in italy,2.5806451612903225
-primigi,0.0
-shein,91.87096774193549
-valentino,17.677419354838708
-sun68,0.1935483870967742
-copenhagen,78.3225806451613
-lanvin,6.129032258064516
-yu-gi-oh!,5.419354838709677
-mihara yasuhiro,1.1612903225806452
-pepe jeans,1.0
-lotto,76.61290322580645
-belle,32.54838709677419
-xti,0.03225806451612903
-yourturn,0.0
-vera pelle,0.0
-oysho,4.354838709677419
-gogo,7.580645161290323
-casual,75.54838709677419
-froddo,0.12903225806451613
-vertbaudet,1.032258064516129
-supreme,68.64516129032258
-steffen schraut,0.0
-gola,8.516129032258064
-estrada,11.741935483870968
-bluey,1.967741935483871
-cat,45.193548387096776
-marvel,9.161290322580646
-anonyme,0.0
-dc,37.903225806451616
-giuliano galiano,0.0
-rodier,0.0
-energy,61.516129032258064
-dsquared2,0.0
-run up,1.1290322580645162
-chaussures,82.0
-in gold we trust,0.06451612903225806
-vicinity,6.967741935483871
-merrell,50.064516129032256
-gaelle paris,0.03225806451612903
-paw patrol,30.419354838709676
-fairy,82.90322580645162
-mizuno,30.967741935483872
-sweet years,1.6774193548387097
-anekke,0.967741935483871
-camper,78.6774193548387
-wildling,1.0
-zegna,4.548387096774194
-bikkembergs,0.0
-dada,29.580645161290324
-zéro cent cinq,0.0
-joules,37.903225806451616
-gant,66.48387096774194
-jacadi,9.870967741935484
-veja,83.80645161290323
-versace,79.93548387096774
-jammers,2.935483870967742
-ganni,9.193548387096774
-abra,16.774193548387096
-canguro,5.387096774193548
-louis vuitton,75.48387096774194
-kennel & schmenger,0.0
-kappa,5.419354838709677
-mason garments,0.0
-liu jo,1.032258064516129
-philipp plein,7.32258064516129
-c&a,26.35483870967742
-primadonna,4.0
-runfit,0.0
-refresh,68.16129032258064
-tendance,21.516129032258064
-bambina,44.03225806451613
-"ps, poelman",0.0
-freddy,85.93548387096774
-giuseppe zanotti,3.0
-arc'teryx,56.41935483870968
-everlast,62.096774193548384
-candice cooper,0.6774193548387096
-solo soprani,0.0
-nobrand.pt,0.0
-basile,7.451612903225806
-cristianzerotre,0.0
-talla,88.06451612903226
-bacio & bacio,0.0
-inconnu,4.161290322580645
-sandro,47.903225806451616
-woden,5.67741935483871
-steitz secura,0.03225806451612903
-navigare,1.7419354838709677
-ducati,84.19354838709677
-smr23,10.483870967741936
+brand,search_term,avg_interest_global_last_month
+isabel marant,shoes isabel marant,3.1296296296296298
+converse,shoes converse,47.22222222222222
+oxmox,shoes oxmox,0.0
+jeecey,shoes jeecey,0.0
+cruyff,shoes cruyff,0.0
+nike,shoes nike,43.148148148148145
+reebok,shoes reebok,5.148148148148148
+new balance,shoes new balance,15.314814814814815
+adidas,shoes adidas,27.01851851851852
+gucci,shoes gucci,3.759259259259259
+the kooples,shoes the kooples,0.0
+diadora,shoes diadora,1.3518518518518519
+michael kors,shoes michael kors,14.425925925925926
+na-kd,shoes na-kd,0.0
+munich,shoes munich,2.0185185185185186
+philippe model,shoes philippe model,2.9814814814814814
+new yorker,shoes new yorker,7.444444444444445
+primark,shoes primark,36.74074074074074
+geox,shoes geox,62.370370370370374
+graceland,shoes graceland,6.037037037037037
+calvin klein,shoes calvin klein,14.37037037037037
+nautica,shoes nautica,1.6666666666666667
+dkny,shoes dkny,1.3333333333333333
+off-white,shoes off-white,1.4259259259259258
+united colors of benetton,shoes united colors of benetton,0.0
+vty,shoes vty,0.0
+puma,shoes puma,36.074074074074076
+speedware,shoes speedware,0.0
+disney,shoes disney,4.62962962962963
+hugo boss,shoes hugo boss,1.2962962962962963
+novita,shoes novita,0.0
+monkey,shoes monkey,2.037037037037037
+nelly,shoes nelly,0.07407407407407407
+american eagle,shoes american eagle,1.4814814814814814
+zara,shoes zara,23.574074074074073
+weiss,shoes weiss,0.9074074074074074
+tommy hilfiger,shoes tommy hilfiger,10.314814814814815
+ralph lauren,shoes ralph lauren,22.25925925925926
+panther,shoes panther,2.3703703703703702
+inside,shoes inside,18.537037037037038
+timberland,shoes timberland,60.7962962962963
+premiata,shoes premiata,3.2777777777777777
+blue motion,shoes blue motion,2.8333333333333335
+clo,shoes clo,0.7222222222222222
+fila,shoes fila,29.88888888888889
+japan style,shoes japan style,4.555555555555555
+bally,shoes bally,9.092592592592593
+golden goose,shoes golden goose,60.94444444444444
+superdry,shoes superdry,2.240740740740741
+melania,shoes melania,1.3148148148148149
+dolce & gabbana,shoes dolce & gabbana,0.5925925925925926
+prada,shoes prada,19.62962962962963
+autry,shoes autry,1.0
+dior,shoes dior,11.981481481481481
+balenciaga,shoes balenciaga,11.314814814814815
+asics,shoes asics,44.592592592592595
+champion,shoes champion,2.0
+lefties,shoes lefties,0.0
+vans,shoes vans,19.14814814814815
+alexander mcqueen,shoes alexander mcqueen,1.9814814814814814
+bepositive,shoes bepositive,0.0
+salomon,shoes salomon,25.01851851851852
+superga,shoes superga,0.8518518518518519
+hogan,shoes hogan,1.1851851851851851
+on running,shoes on running,37.68518518518518
+lacoste,shoes lacoste,14.481481481481481
+max mara,shoes max mara,0.9814814814814815
+saucony,shoes saucony,39.851851851851855
+drunknmunky,shoes drunknmunky,0.0
+crime london,shoes crime london,0.7037037037037037
+burberry,shoes burberry,37.51851851851852
+mephisto,shoes mephisto,9.166666666666666
+axel arigato,shoes axel arigato,5.537037037037037
+tamaris,shoes tamaris,5.962962962962963
+twinset,shoes twinset,0.05555555555555555
+mix feel,shoes mix feel,0.018518518518518517
+ugg,shoes ugg,32.5
+karhu,shoes karhu,2.185185185185185
+frozen,shoes frozen,9.0
+etnies,shoes etnies,4.351851851851852
+skechers,shoes skechers,51.925925925925924
+christian louboutin,shoes christian louboutin,4.796296296296297
+bershka,shoes bershka,1.5740740740740742
+prima classe,shoes prima classe,0.0
+alesya,shoes alesya,0.0
+kenzo,shoes kenzo,6.0
+2star,shoes 2star,0.0
+monsieur l,shoes monsieur l,0.0
+caterpillar,shoes caterpillar,37.48148148148148
+amiri,shoes amiri,76.03703703703704
+hoff,shoes hoff,0.9814814814814815
+levi's,shoes levi's,12.944444444444445
+energetics,shoes energetics,0.0
+givenchy,shoes givenchy,1.4259259259259258
+diesel,shoes diesel,6.574074074074074
+signo by botinelli,shoes signo by botinelli,0.0
+moaconcept,shoes moaconcept,0.0
+blc,shoes blc,0.0
+dr. martens,shoes dr. martens,21.98148148148148
+toni pons,shoes toni pons,2.740740740740741
+bottega veneta,shoes bottega veneta,8.851851851851851
+blue box,shoes blue box,13.444444444444445
+igi&co,shoes igi&co,0.0
+miu miu,shoes miu miu,14.61111111111111
+chicco,shoes chicco,1.4259259259259258
+h&m,shoes h&m,13.685185185185185
+lelli kelly,shoes lelli kelly,0.2037037037037037
+vanessa wu,shoes vanessa wu,0.0
+barefoot,shoes barefoot,23.037037037037038
+aldo,shoes aldo,8.314814814814815
+minecraft,shoes minecraft,41.77777777777778
+moschino,shoes moschino,5.407407407407407
+giardino d'oro,shoes giardino d'oro,0.0
+rieker,shoes rieker,19.685185185185187
+ghoud,shoes ghoud,0.018518518518518517
+bape sta,shoes bape sta,3.814814814814815
+hobibear,shoes hobibear,23.40740740740741
+arena,shoes arena,39.77777777777778
+pull & bear,shoes pull & bear,0.16666666666666666
+gioseppo,shoes gioseppo,1.2592592592592593
+ellesse,shoes ellesse,1.9074074074074074
+victoria,shoes victoria,41.407407407407405
+guess,shoes guess,29.0
+joalice,shoes joalice,0.0
+footkorner,shoes footkorner,0.0
+primigi,shoes primigi,0.6851851851851852
+shein,shoes shein,52.629629629629626
+valentino,shoes valentino,38.351851851851855
+sun68,shoes sun68,0.018518518518518517
+copenhagen,shoes copenhagen,20.462962962962962
+lanvin,shoes lanvin,16.925925925925927
+yu-gi-oh!,shoes yu-gi-oh!,0.6481481481481481
+pepe jeans,shoes pepe jeans,2.8703703703703702
+lotto,shoes lotto,24.796296296296298
+belle,shoes belle,22.833333333333332
+xti,shoes xti,32.092592592592595
+yourturn,shoes yourturn,0.07407407407407407
+oysho,shoes oysho,31.833333333333332
+froddo,shoes froddo,46.03703703703704
+vertbaudet,shoes vertbaudet,0.7407407407407407
+supreme,shoes supreme,34.05555555555556
+steffen schraut,shoes steffen schraut,0.0
+gola,shoes gola,8.25925925925926
+estrada,shoes estrada,0.8888888888888888
+bluey,shoes bluey,5.518518518518518
+marvel,shoes marvel,5.925925925925926
+dc,shoes dc,49.94444444444444
+mihara yasuhiro,shoes mihara yasuhiro,1.0740740740740742
+giuliano galiano,shoes giuliano galiano,0.0
+rodier,shoes rodier,0.0
+energy,shoes energy,25.85185185185185
+dsquared2,shoes dsquared2,0.18518518518518517
+run up,shoes run up,1.7407407407407407
+vicinity,shoes vicinity,0.0
+merrell,shoes merrell,22.59259259259259
+gaelle paris,shoes gaelle paris,0.0
+paw patrol,shoes paw patrol,3.537037037037037
+fairy,shoes fairy,8.203703703703704
+mizuno,shoes mizuno,39.925925925925924
+sweet years,shoes sweet years,0.2037037037037037
+anekke,shoes anekke,0.0
+camper,shoes camper,51.370370370370374
+wildling,shoes wildling,7.925925925925926
+zegna,shoes zegna,18.22222222222222
+bikkembergs,shoes bikkembergs,0.2962962962962963
+dada,shoes dada,42.05555555555556
+zéro cent cinq,shoes zéro cent cinq,0.3333333333333333
+joules,shoes joules,23.574074074074073
+gant,shoes gant,61.98148148148148
+jacadi,shoes jacadi,3.2037037037037037
+veja,shoes veja,59.2962962962963
+versace,shoes versace,32.666666666666664
+jammers,shoes jammers,1.3703703703703705
+ganni,shoes ganni,6.074074074074074
+abra,shoes abra,0.2962962962962963
+canguro,shoes canguro,0.0
+louis vuitton,shoes louis vuitton,19.703703703703702
+kennel & schmenger,shoes kennel & schmenger,0.0
+kappa,shoes kappa,0.9814814814814815
+liu jo,shoes liu jo,0.0
+philipp plein,shoes philipp plein,8.314814814814815
+c&a,shoes c&a,1.5555555555555556
+primadonna,shoes primadonna,0.8888888888888888
+runfit,shoes runfit,0.037037037037037035
+refresh,shoes refresh,21.0
+tendance,shoes tendance,2.7777777777777777
+"ps, poelman","shoes ps, poelman",0.0
+freddy,shoes freddy,10.38888888888889
+arc'teryx,shoes arc'teryx,21.14814814814815
+everlast,shoes everlast,20.61111111111111
+candice cooper,shoes candice cooper,0.7222222222222222
+solo soprani,shoes solo soprani,0.09259259259259259
+basile,shoes basile,0.46296296296296297
+cristianzerotre,shoes cristianzerotre,2.3333333333333335
+bacio & bacio,shoes bacio & bacio,0.0
+sandro,shoes sandro,51.7962962962963
+woden,shoes woden,17.555555555555557
+steitz secura,shoes steitz secura,0.018518518518518517
+navigare,shoes navigare,0.05555555555555555
+smr23,shoes smr23,0.24074074074074073

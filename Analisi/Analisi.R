@@ -48,7 +48,7 @@ dati[dati$Brand_raw=="cat",]
 brand <- readr::read_csv("Scraping/google_trends_global.csv")
 View(brand)
 
-brand[brand$avg_interest_global_last_month < 2,1] |> c()
+brand[brand$avg_interest_global_last_month < 5,1] |> c()
 brand[brand$avg_interest_global_last_month > 60,1] |> c()
 
 boxplot(brand$avg_interest_global_last_month)
