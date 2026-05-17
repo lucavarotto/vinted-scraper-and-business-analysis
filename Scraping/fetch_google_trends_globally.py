@@ -5,6 +5,9 @@ from pytrends.request import TrendReq
 from pytrends.exceptions import ResponseError
 import os
 
+
+os.chdir("Progetto")
+
 # Configurazione logging
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -14,7 +17,7 @@ def fetch_trends_global_batch(
     keywords: list[str],
     timeframe: str = "today 1-m",
     retries: int = 5,
-    base_wait: float = 60.0,
+    base_wait: float = 20.0,
 ) -> dict[str, float]:
     """
     Chiama Google Trends a livello MONDIALE (geo='') per un batch di keyword.
@@ -46,13 +49,13 @@ def fetch_trends_global_batch(
                 return {kw: None for kw in keywords}
 
 def main(
-    input_csv: str = "Progetto/Scraping/dati.csv",
-    output_csv: str = "google_trends_global.csv",
+    input_csv: str = "Analisi/dati_puliti_colab.csv",
+    output_csv: str = "Scraping/google_trends_global.csv",
     delay_between_batches: float = 5.0,
 ):
     # 1. Carica il dataset e prendi i brand UNICI
     df = pd.read_csv(input_csv)
-    unique_brands = df["Brand"].dropna().unique().tolist()
+    unique_brands = df["Brand_raw"].dropna().unique().tolist()
     
     logger.info(f"Brand unici da analizzare a livello globale: {len(unique_brands)}")
 

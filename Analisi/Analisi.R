@@ -1,7 +1,9 @@
 setwd("C:/Users/Utente/OneDrive/Universita/Magistrale/2025-2026/Aziendali/Progetto")
 rm(list=ls()); gc()
 
-dati <- readr::read_csv("Scraping/datasets/dati.csv")
+dati <- readr::read_csv("Scraping/dati.csv")
+
+View(subset(dati, is.na(dati$Seller_User)))
 
 View(dati)
 
@@ -30,11 +32,23 @@ dati$Seller_User[ids]
 
 
 
-id <- grep(pattern="min", dati$Upload_Date_Raw)
-dati$Upload_Date_Raw[id] <- "0 ore"
-table(dati$Upload_Date_Raw)
 
-brand <- readr::read_csv("Scraping/google_trends_brand_country.csv")
+
+dati <- readr::read_csv("Analisi/dati_puliti_colab.csv")
+unique(dati$Brand_raw) |> c()
+sum(is.na(dati$Brand_raw))
+
+dati[dati$Brand_raw=="cat",]
+
+
+
+
+
+
+brand <- readr::read_csv("Scraping/google_trends_global.csv")
 View(brand)
 
-View(dati[,c("Brand", "Seller_Location")])
+brand[brand$avg_interest_global_last_month < 2,1] |> c()
+brand[brand$avg_interest_global_last_month > 60,1] |> c()
+
+boxplot(brand$avg_interest_global_last_month)
