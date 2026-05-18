@@ -30,11 +30,16 @@ dati$Seller_User[ids]
 
 
 
+size_originale <- dati$Size
+size_gsub <- gsub(",", ".", dati$Size)
+size_numeric <- as.numeric(size_gsub)
 
-
+dati[size_numeric |> is.na() |> which(),] |> 
+  View()
 
 
 dati <- readr::read_csv("Analisi/dati_puliti_colab.csv")
+dati$Description[4]
 unique(dati$Brand_raw) |> c()
 sum(is.na(dati$Brand_raw))
 
