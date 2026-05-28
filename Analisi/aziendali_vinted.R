@@ -146,7 +146,7 @@ classifica <- function(stringa) {
 }
 
 # Applicazione al dataframe
-dati$Color_new <- sapply(dati$Color, classifica)
+dati$Color_new <- sapply(dati$Color, classifica) |> as.factor()
 table(dati$Color_new)
 
 dati$Color <- NULL
@@ -167,7 +167,7 @@ dati$Condition
 table(dati$Condition)
 
 dati$Material <- fct_na_value_to_level(dati$Material, "ignoto")
-dati$Material <- ifelse(dati$Material == "ignoto", "ignoto", "noto")
+dati$Material <- ifelse(dati$Material == "ignoto", "ignoto", "noto") |> as.factor()
 table(dati$Material)
 
 dati$Favorites_Count[is.na(dati$Favorites_Count)] <- 0
@@ -287,23 +287,20 @@ dati <- dati %>%
 
 dataset_regressione_prezzo <- dati |> 
   select(Price, Brand, Size, Condition, Material, Favorites_Count, Shipping_Cost,
-         Is_Boosted, Has_Item_Verification, Seller_Rating, Color_new,
-         Seller_Rating_Class, Log_Seller_Reviews_Count, Seller_has_distintivi,
-         Num_Other_Items) |> 
+         Is_Boosted, Has_Item_Verification, Color_new, Seller_Rating_Class,
+         Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items) |> 
   rename(y=Price)
 
 dataset_regressione_favoriti <- dati |> 
   select(LogPrice, Brand, Size, Condition, Material, Favorites_Count, Shipping_Cost,
-         Is_Boosted, Has_Item_Verification, Seller_Rating, Color_new,
-         Seller_Rating_Class, Log_Seller_Reviews_Count, Seller_has_distintivi,
-         Num_Other_Items) |> 
+         Is_Boosted, Has_Item_Verification, Color_new, Seller_Rating_Class,
+         Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items) |> 
   rename(y=Favorites_Count)
 
 dataset_classificazione_qualita <- dati |> 
   select(LogPrice, Brand, Size, Condition, Material, Favorites_Count, Shipping_Cost,
-         Is_Boosted, Has_Item_Verification, Seller_Rating, Color_new,
-         Seller_Rating_Class, Log_Seller_Reviews_Count, Seller_has_distintivi,
-         Num_Other_Items) |> 
+         Is_Boosted, Has_Item_Verification, Color_new, Seller_Rating_Class,
+         Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items) |> 
   rename(y=Condition)
 
 dataset_MBA <- dati |> 
