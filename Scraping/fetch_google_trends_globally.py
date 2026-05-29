@@ -107,7 +107,7 @@ def main(
             results.append({
                 "brand": brand_clean,
                 "search_term": search_term, 
-                "avg_interest_global_last_month": score
+                "avg_interest_global_last_year": score
             })
         
         # Pausa di sicurezza obbligatoria tra un batch e l'altro per simulare un comportamento umano

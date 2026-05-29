@@ -38,13 +38,16 @@ dati[size_numeric |> is.na() |> which(),] |>
   View()
 
 
-dati <- readr::read_csv("Analisi/dati_puliti_colab.csv")
+load("Analisi/dati_puliti.Rdata")
 dati$Description[4]
 unique(dati$Brand_raw) |> c()
 sum(is.na(dati$Brand_raw))
 
 dati[dati$Brand_raw=="cat",]
 
+
+length(brand$brand)
+length(unique(dataset_MBA$Brand_raw))
 
 
 

@@ -188,7 +188,46 @@ boxplot(dati$Price |> log())
 
 dati$LogPrice <- log(dati$Price)
 
-dati$Upload_Date_Raw |> unique()
+dati$Upload_Date_Raw |> table()
+
+library(dplyr)
+library(stringr)
+
+moltiplicatori <- c(
+  "min" = 1/60,
+  "ore" = 1,
+  "ora" = 1,
+  "giorn" = 24,
+  "settiman" = 24 * 7,
+  "mes" = 24 * 30.42, # media giorni in un mese
+  "ann" = 24 * 365
+)
+
+dati_puliti <- dati %>%
+  mutate(
+    # Uniformiamo i testi per eliminare i casi particolari "un/una"
+    testo_pulito = Upload_Date_Raw %>% 
+      tolower() %>% 
+      str_replace("^un'|^un |^una ", "1 "),
+    
+    # Estraiamo la parte numerica
+    valore = as.numeric(str_extract(testo_pulito, "\\d+")),
+    
+    # Identifichiamo l'unità di misura
+    unita = str_extract(testo_pulito, "min|ore|ora|giorn|settiman|mes|ann"),
+    
+    # Calcoliamo le ore totali di distanza dal presente
+    ore_passate = valore * moltiplicatori[unita]
+  )
+
+# 2. Generiamo il table ordinato in base alle ore passate
+output_ordinato <- dati_puliti %>%
+  count(Upload_Date_Raw, ore_passate) %>%
+  arrange(ore_passate) %>%
+  select(Upload_Date_Raw, n)
+
+print(output_ordinato, n = Inf) # Visualizza il risultato
+
 dati$Upload_Date_Raw <- NULL
 
 colnames(dati)
@@ -285,16 +324,38 @@ dati <- dati %>%
     )
   )
 
+# dati google trends ----
+
+brand <- readr::read_csv("C:/Users/Utente/OneDrive/Universita/Magistrale/2025-2026/Aziendali/Progetto/Scraping/google_trends_global.csv")
+colnames(brand)
+m <- mean(brand$avg_interest_global_last_year)
+brand <- brand |> 
+  dplyr::add_row(
+    brand = "ignoto", 
+    search_term = "", 
+    avg_interest_global_last_year = m
+  )
+
+dati <- left_join(dati, brand[,c(1,3)], by = join_by(Brand_raw==brand))
+colnames(dati)
+
+mean(is.na(dati$avg_interest_global_last_year))
+boxplot(dati$avg_interest_global_last_year)
+
+# Salvataggio dataset ----
+
 dataset_regressione_prezzo <- dati |> 
   select(Price, Brand, Size, Condition, Material, Favorites_Count, Shipping_Cost,
          Is_Boosted, Has_Item_Verification, Color_new, Seller_Rating_Class,
-         Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items) |> 
+         Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items,
+         avg_interest_global_last_year) |> 
   rename(y=Price)
 
 dataset_regressione_favoriti <- dati |> 
   select(LogPrice, Brand, Size, Condition, Material, Favorites_Count, Shipping_Cost,
          Is_Boosted, Has_Item_Verification, Color_new, Seller_Rating_Class,
-         Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items) |> 
+         Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items,
+         avg_interest_global_last_year) |> 
   rename(y=Favorites_Count)
 
 dataset_classificazione_qualita <- dati |> 
@@ -319,7 +380,7 @@ fold_id <- sample(1:K, NROW(dati), replace=T)
 table(fold_id)
 
 setwd("C:/Users/Utente/OneDrive/Universita/Magistrale/2025-2026/Aziendali/Progetto/Analisi")
-save(dataset_regressione_prezzo, dataset_regressione_favoriti,
+save(dati, dataset_regressione_prezzo, dataset_regressione_favoriti,
      dataset_classificazione_qualita, dataset_MBA, dataset_clustering,
      id_stima, id_verifica, fold_id, file="dati_puliti.Rdata")
 
