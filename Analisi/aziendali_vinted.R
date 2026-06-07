@@ -145,6 +145,8 @@ classifica <- function(stringa) {
   return("Altro/Non Classificato")
 }
 
+length(unique(dati$Color))
+
 # Applicazione al dataframe
 dati$Color_new <- sapply(dati$Color, classifica) |> as.factor()
 table(dati$Color_new)
@@ -206,16 +208,16 @@ moltiplicatori <- c(
 dati_puliti <- dati %>%
   mutate(
     # Uniformiamo i testi per eliminare i casi particolari "un/una"
-    testo_pulito = Upload_Date_Raw %>% 
-      tolower() %>% 
+    testo_pulito = Upload_Date_Raw %>%
+      tolower() %>%
       str_replace("^un'|^un |^una ", "1 "),
-    
+
     # Estraiamo la parte numerica
     valore = as.numeric(str_extract(testo_pulito, "\\d+")),
-    
+
     # Identifichiamo l'unità di misura
     unita = str_extract(testo_pulito, "min|ore|ora|giorn|settiman|mes|ann"),
-    
+
     # Calcoliamo le ore totali di distanza dal presente
     ore_passate = valore * moltiplicatori[unita]
   )
@@ -241,7 +243,7 @@ table(dati$Is_Boosted)
 dati$Has_Buyer_Protection <- NULL
 table(dati$Has_Buyer_Protection)
 
-table(dati$Has_Item_Verification) 
+table(dati$Has_Item_Verification)
 
 dati$Seller_Location |> unique()
 
@@ -289,12 +291,12 @@ dati <- dati %>%
       rating_num == 5.0                     ~ "Perfetto (5.0)",
       TRUE                                  ~ "Nessuna recensione"
     ),
-    
+
     # Trasformiamo in fattore ordinato (fondamentale per i futuri grafici!)
     Seller_Rating_Class = factor(Seller_Rating_Class, levels = c(
       "Nessuna recensione", "Basso (<= 4.0)", "Buono (4.1 - 4.6)", "Ottimo (4.7 - 4.9)", "Perfetto (5.0)"
     ))
-  ) %>% 
+  ) %>%
   select(-rating_num) # Rimuoviamo la colonna numerica temporanea
 
 table(dati$Seller_Rating_Class)
@@ -329,10 +331,10 @@ dati <- dati %>%
 brand <- readr::read_csv("C:/Users/Utente/OneDrive/Universita/Magistrale/2025-2026/Aziendali/Progetto/Scraping/google_trends_global.csv")
 colnames(brand)
 m <- mean(brand$avg_interest_global_last_year)
-brand <- brand |> 
+brand <- brand |>
   dplyr::add_row(
-    brand = "ignoto", 
-    search_term = "", 
+    brand = "ignoto",
+    search_term = "",
     avg_interest_global_last_year = m
   )
 
@@ -344,30 +346,31 @@ boxplot(dati$avg_interest_global_last_year)
 
 # Salvataggio dataset ----
 
-dataset_regressione_prezzo <- dati |> 
+dataset_regressione_prezzo <- dati |>
   select(Price, Brand, Size, Condition, Material, Favorites_Count, Shipping_Cost,
          Is_Boosted, Has_Item_Verification, Color_new, Seller_Rating_Class,
          Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items,
-         avg_interest_global_last_year) |> 
+         avg_interest_global_last_year) |>
   rename(y=Price)
 
-dataset_regressione_favoriti <- dati |> 
+dataset_regressione_favoriti <- dati |>
   select(LogPrice, Brand, Size, Condition, Material, Favorites_Count, Shipping_Cost,
          Is_Boosted, Has_Item_Verification, Color_new, Seller_Rating_Class,
          Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items,
-         avg_interest_global_last_year) |> 
+         avg_interest_global_last_year) |>
   rename(y=Favorites_Count)
 
-dataset_classificazione_qualita <- dati |> 
+dataset_classificazione_qualita <- dati |>
   select(LogPrice, Brand, Size, Condition, Material, Favorites_Count, Shipping_Cost,
          Is_Boosted, Has_Item_Verification, Color_new, Seller_Rating_Class,
-         Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items) |> 
+         Log_Seller_Reviews_Count, Seller_has_distintivi, Num_Other_Items) |>
   rename(y=Condition)
 
-dataset_MBA <- dati |> 
-  select(URL, Brand_raw, Seller_User, Other_Items_Previewed_URLs)
+dataset_MBA <- dati |>
+  select(URL, Brand_raw, Seller_User, Other_Items_Previewed_URLs,
+         avg_interest_global_last_year)
 
-dataset_clustering <- dati |> 
+dataset_clustering <- dati |>
   select(LogPrice, Brand, Size, Condition, Material, Favorites_Count,
          Is_Boosted, Color_new)
 

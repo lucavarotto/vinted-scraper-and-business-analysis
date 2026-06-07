@@ -64,8 +64,9 @@ def fetch_trends_global_batch(
                 return {kw: None for kw in keywords}
 
 def main(
-    input_csv: str = "Analisi/dati_puliti_colab.csv",
-    output_csv: str = "Scraping/google_trends_global.csv",
+    #input_csv: str = "Analisi/dati_puliti_colab.csv",
+    input_csv: str = "Scraping/brand_per_laura.csv",
+    output_csv: str = "Scraping/google_trends_per_laura.csv",
     delay_between_batches: float = 3.0,
 ):
     # Legge il file CSV dei brand precedentemente pulito in R
