@@ -1,5 +1,6 @@
 rm(list=ls());gc();
-url <- "https://raw.githubusercontent.com/lucavarotto/vinted-scraper-and-business-analysis/main/Scraping/dati.csv"
+
+url <- "https://raw.githubusercontent.com/lucavarotto/vinted-scraper-and-business-analysis/main/Dati/dati.csv"
 dati <- readr::read_csv(url)
 cat("\ndimensioni:", dim(dati))
 dati[is.na(dati$Condition),]
