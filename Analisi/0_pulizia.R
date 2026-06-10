@@ -225,9 +225,9 @@ dati_puliti <- dati %>%
 
 # 2. Generiamo il table ordinato in base alle ore passate
 output_ordinato <- dati_puliti %>%
-  count(Upload_Date_Raw, ore_passate) %>%
-  arrange(ore_passate) %>%
-  select(Upload_Date_Raw, n)
+  dplyr::count(Upload_Date_Raw, ore_passate) %>%
+  dplyr::arrange(ore_passate) %>%
+  dplyr::select(Upload_Date_Raw, n)
 
 print(output_ordinato, n = Inf) # Visualizza il risultato
 
@@ -329,7 +329,8 @@ dati <- dati %>%
 
 # dati google trends ----
 
-brand <- readr::read_csv("C:/Users/Utente/OneDrive/Universita/Magistrale/2025-2026/Aziendali/Progetto/Scraping/google_trends_global.csv")
+url <- "https://raw.githubusercontent.com/lucavarotto/vinted-scraper-and-business-analysis/main/Dati/google_trends_global.csv"
+brand <- readr::read_csv(url)
 colnames(brand)
 m <- mean(brand$avg_interest_global_last_year)
 brand <- brand |>

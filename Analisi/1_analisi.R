@@ -3081,7 +3081,7 @@ itemFrequencyPlot(m0.trans,support=.08) # molto più leggibile
 itemFrequencyPlot(m0.trans, col="salmon", topN = 10, cex=1.4)
 
 
-# apriori con "soglie minime" per supporto e confidenza ----
+## Apriori con "soglie minime" per supporto e confidenza ----
 regole <- apriori(m0.trans,
                   parameter = list(supp = 0.02,   # Supporto minimo: 2%
                                    conf = 0.50,   # Confidenza minima: 50%
@@ -3144,7 +3144,7 @@ tabella_bella
 
 
 
-# Rappresentazione grafica ----
+## Rappresentazione grafica ----
 # Cerchiamo di rappresentare queste regole con una serie di strumenti
 
 library(arulesViz)
@@ -3200,7 +3200,6 @@ plot(head(regole_ord, 20), method = "graph", engine = "htmlwidget")
 plot(regole_ord, method = "graph", engine = "htmlwidget")
 
 
-#######
 plot(regole_ord)
 plot(regole_ord, method = "graph")
 plot(regole_ord, method = "graph", engine="interactive")
@@ -3263,7 +3262,7 @@ inspect(regole_lusso_ord)
 
 
 
-## RETI ----
+# RETI ----
 
 # Trasformo la matrice m0 (Utenti x Brand) in una matrice quadrata (Brand x Brand)
 # Questo calcola le "co-occorrenze" (quante volte due brand sono nello stesso armadio)
@@ -3289,7 +3288,7 @@ library(visNetwork)
 visIgraph(rete_vinted)
 
 # Apri la tela in formato SVG
-svg("rete_brand.svg", width = 12, height = 12)
+svg("Plot/rete_brand.svg", width = 12, height = 12)
 
 image(as.matrix(rete_vinted))
 
@@ -3344,7 +3343,7 @@ shortest_paths(rete_vinted, from = "paw_patrol", to = "prima_classe") # 3 nodi i
 
 
 
-# MODELLO AMEN (Social Relation Model) ----
+## MODELLO AMEN (Social Relation Model) ----
 library(amen)
 
 # Uso logaritmo per smussare le cooccorrenze estreme
@@ -3363,8 +3362,8 @@ edge_density(rete30) # 97%
 head(sort(betweenness(rete30), decreasing = TRUE), 5)
 
 
-
-dati_google <- read.csv("google_trends_per_laura.csv")
+url <- "https://raw.githubusercontent.com/lucavarotto/vinted-scraper-and-business-analysis/main/Dati/google_trends_global_p2.csv"
+dati_google <- read.csv(url)
 View(dati_google)
 
 dataset_MBA$avg_interest_global_last_year
@@ -3384,8 +3383,7 @@ sotto_dataset$Brand_raw <- gsub(" ", "_", sotto_dataset$Brand_raw)
 sotto_dataset1 <- sotto_dataset[sotto_dataset$Brand_raw %in% colnames(Y_amen_ridotto),]
 rownames(sotto_dataset1) <- NULL
 
-
-### ----
+# creazione sotto-insieme di dati (30 brand) per un'analisi successiva
 # set.seed(23)
 # y30 <- sample(colnames(matrice_cooccorrenze),30)
 # Y_rid <- Y_amen[y30, y30]
@@ -3411,7 +3409,8 @@ rownames(sotto_dataset1) <- NULL
 
 
 
-# Regressione lineare ----
+## Regressione lineare ----
+
 set.seed(42)
 fit_lm<-ame(Y_amen_ridotto,Xrow = sotto_dataset1$avg_interest_global_last_year, Xcol = sotto_dataset1$avg_interest_global_last_year,
             family="nrm", symmetric=TRUE, rvar=FALSE,cvar=FALSE,dcor=FALSE)
@@ -3426,7 +3425,7 @@ summary(fit_lm)
 
 
 
-# SRM ----
+## SRM ----
 set.seed(42)
 fit_SRM<-ame(Y_amen_ridotto, family="nrm", symmetric = TRUE, R=0)
 summary(fit_SRM)
@@ -3439,7 +3438,7 @@ plot(fit_SRM)
 # È consigliabile standardizzarli o usare il logaritmo per evitare scale troppo diverse
 # google_trends_log <- log(google_trends + 1)
 
-# SRRM (Social Relations Regression Model) ----
+## SRRM (Social Relations Regression Model) ----
 # Aggiungiamo la tua variabile geniale (Google Trends) per spiegare la popolarità.
 # R = 0 (ancora niente fattori latenti)
 set.seed(42)
@@ -3454,7 +3453,7 @@ summary(fit_SRRM_vinted)
 
 
 
-# AME (con dati simmetrici continui) ----
+## AME (con dati simmetrici continui) ----
 # Vediamo l'avanzamento MCMC nella console
 # Vogliamo 2 fattori latenti spaziali (R = 2)
 set.seed(42)
@@ -3523,7 +3522,7 @@ par(mfrow=c(1,1))
 
 
 
-## Clustering ----
+# Clustering ----
 
 # Confronto tra Metodi
 # (ho due strade possibili: Solo Quantitative vs Dati Misti)
@@ -3541,7 +3540,7 @@ MD.quant_scaled <- scale(MD.quant)
 
 
 
-## CLUSTERING DISTANZE EUCLIDEE: ----
+## Distanze Euclidee ----
 
 # CLUSTERING GERARCHICO
 # per SCELTA DEL K Ottimale tramite Dendrogramma
@@ -3718,11 +3717,7 @@ plot(effect("Brand", modello_profilazione),
      ylab = "Probabilità di Appartenenza al Segmento",
      xlab = "Brand Vinted")
 
-
-
-
-
-## CLUSTERING DISTANZA DI GOWER: ----
+## Distanza di Gower ----
 
 # CLUSTERING GERARCHICO
 
