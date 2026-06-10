@@ -36,6 +36,4 @@ L'analisi sul dataset Vinted è stata strutturata simulando un intervento di con
 
 3. Valutazione e Percezione della Qualità: modellizzazione delle caratteristiche che definiscono un prodotto di "alta qualità" agli occhi della community. Utilizzo di una regressione Probit Ordinale per mappare la variabile risposta.
 
-4. Analisi delle Reti e Sistemi di Raccomandazione: studio delle interdipendenze tra i brand e delle abitudini di stoccaggio degli utenti.
-
-Metodologia: Applicazione della Market Basket Analysis (MBA) e della Network Analysis sulla variabile Other_Items_Previewed_URLs per mappare i grafi di co-occorrenza dei brand all'interno degli stessi armadi. L'obiettivo è generare un algoritmo di raccomandazione cross-selling per cluster di brand affini.
+4. Analisi delle Reti e Sistemi di Raccomandazione: studio delle interdipendenze tra i brand e delle abitudini di stoccaggio degli utenti. Realizzata tramite Market Basket Analysis e della Network Analysis. L'obiettivo è generare un algoritmo di raccomandazione cross-selling per cluster di brand affini.
